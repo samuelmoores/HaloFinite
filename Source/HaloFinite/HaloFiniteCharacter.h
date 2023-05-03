@@ -19,9 +19,7 @@ class AHaloFiniteCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
-	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category=Mesh)
-	USkeletalMeshComponent* Mesh1P;
+	
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
@@ -51,6 +49,10 @@ protected:
 	virtual void BeginPlay();
 
 public:
+
+	/** Pawn mesh: 1st person view (arms; seen only by self) */
+	UPROPERTY(BlueprintReadWrite, Category=Mesh)
+	USkeletalMeshComponent* Mesh1P;
 		
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
